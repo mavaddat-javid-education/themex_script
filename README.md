@@ -1,14 +1,14 @@
 # OpenEdX Comprehensive theme auto install
 
-* This playbook not applicable for Vagrant devstack
+* The playbook used by the script when it calls Ansible is *not applicable* for Vagrant devstack
 
 ## QUICK START
 
-This guide will instruct you as to how to set up an automated install of themes
+This guide describes how to set up automated install of themes
 
 ### REQUIREMENTS
 
-TODO: List requirements
+Linux, [ansible](https://github.com/ansible/ansible).
 
 #### Dependencies
 
@@ -47,7 +47,7 @@ Use the remote `-r` switch followed by the URL to the zip file for the theme (e.
 
 ### When using theme branch in mavaddat-javid repo
 
-Download theme from mavaddat-javid repo with specific branch, then supply the branch `-b` switch followed by the theme branch you want (e.g., `marvel-theme-eucalyptus`)
+Download theme from mavaddat-javid repo with specific branch, then supply the <span style="text-decoration: underline">b</span>ranch `-b` switch followed by the theme branch you want (e.g., `marvel-theme-eucalyptus`)
 
 ```bash
 ./update_theme.sh -b theme_branch
@@ -55,7 +55,7 @@ Download theme from mavaddat-javid repo with specific branch, then supply the br
 
 ### When using your own theme repository
 
-Use the branch remote `-br` switch followed by the theme branch you want (e.g., `marvel-theme-eucalyptus`) and then the specific repository Git clone URL (suppose `theme_repo` represents the repository clone URL)
+Use the <span style="text-decoration: underline">b</span>ranch <span style="text-decoration: underline">r</span>emote `-br` switch followed by the theme branch you want (e.g., `marvel-theme-eucalyptus`) and then the specific repository Git clone URL (suppose `theme_repo` represents the repository clone URL)
 
 ```bash
 ./update_theme.sh -br theme_branch theme_repo
@@ -63,7 +63,7 @@ Use the branch remote `-br` switch followed by the theme branch you want (e.g., 
 
 ### When setting up into some remote edX host
 
-Use the branch remote host `-brh` switch followed by the theme branch you want (e.g., `marvel-theme-eucalyptus`) and then the specific repository Git clone URL (suppose `theme_repo` represents the repository clone URL) followed by the URI for your host (e.g., an IP address for the server)
+Use the <span style="text-decoration: underline">b</span>ranch <span style="text-decoration: underline">r</span>emote <span style="text-decoration: underline">h</span>ost `-brh` switch followed by the theme branch you want (e.g., `marvel-theme-eucalyptus`) and then the specific repository Git clone URL (suppose `theme_repo` represents the repository clone URL) followed by the URI for your host (e.g., an IP address for the server)
 
 ```bash
 ./update_theme.sh -brh theme_branch theme_repo edx_host
@@ -72,7 +72,7 @@ Use the branch remote host `-brh` switch followed by the theme branch you want (
 #### Specific Example
 
 Let's suppose we want to install `marvel-theme-eucalyptus` branch from the specific repository https://github.com/mavaddat-javid-education/themes_for_themex.io.git into edX host server residing at IP address 200.83.1.109.
-Then we use the branch remote host `-brh` switch followed by the theme branch name, then the repo URL followed by the URI for our host. It would look like this:
+Then we use the <span style="text-decoration: underline">b</span>ranch <span style="text-decoration: underline">r</span>emote <span style="text-decoration: underline">h</span>ost `-brh` switch followed by the theme branch name, then the repo URL followed by the URI for our host. It would look like this:
 
 ```bash
 ./update_theme.sh -brh marvel-theme-eucalyptus https://github.com/mavaddat-javid-education/themes_for_themex.io.git 200.83.1.109
@@ -84,7 +84,7 @@ Example
 
 If you want to set up a theme branch (`theme_branch`) from a custom repo (`theme_repo`) into some group of edX hosts (`edx_host_group`), then **you'll need to modify the `inventory.ini` file** to list all the server addresses.
 
-After that, use the branch remote host with inventory `-brhi` switch followed by the theme branch you want (e.g., `marvel-theme-eucalyptus`) and then the specific repository Git clone URL (`theme_repo` represents the repository clone URL) followed by the name for your edX server group
+After that, use the <span style="text-decoration: underline">b</span>ranch <span style="text-decoration: underline">r</span>emote <span style="text-decoration: underline">h</span>ost with <span style="text-decoration: underline">i</span>nventory `-brhi` switch followed by the theme branch you want (e.g., `marvel-theme-eucalyptus`) and then the specific repository Git clone URL (`theme_repo` represents the repository clone URL) followed by the name for your edX server group
 
 ```bash
 ./update_theme.sh -brhi theme_branch theme_repo edx_host_group
@@ -100,7 +100,7 @@ Say we want to install `marvel-yellow-theme-eucalyptus` from https://github.com/
 echo -e "[edx]\n83.16.243.180\n69.176.165.155\n96.255.60.44\n40.192.240.83\n9.25.192.24\n77.62.109.78\n2.171.219.149\n27.27.157.234" >> inventory.ini
 ```
 
-Then, we call the script with branch remote host inventory `-brhi` switch followed by `marvel-yellow-theme-eucalyptus` and then https://github.com/mavaddat-javid-education/themes_for_themex.io.git followed by `edx`:
+Then, we call the script with <span style="text-decoration: underline">b</span>ranch <span style="text-decoration: underline">r</span>emote <span style="text-decoration: underline">h</span>ost <span style="text-decoration: underline">i</span>nventory `-brhi` switch followed by `marvel-yellow-theme-eucalyptus` and then https://github.com/mavaddat-javid-education/themes_for_themex.io.git followed by `edx`:
 
 ```bash
 ./update_theme.sh -brhi marvel-yellow-theme-eucalyptus https://github.com/mavaddat-javid-education/themes_for_themex.io.git edx

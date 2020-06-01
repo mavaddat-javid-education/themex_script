@@ -35,7 +35,7 @@
 
     - role: branch
       branch: "{{ theme_branch }}"
-      repo: "https://github.com/raccoongang/themes_for_themex.io.git"
+      repo: "https://github.com/mavaddat-javid-education/themes_for_themex.io.git"
       when: ("{{ script_mode }}" == 'b') and (script_mode is defined) and (branch is defined)
 
     - role: branch
